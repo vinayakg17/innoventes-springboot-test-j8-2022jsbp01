@@ -86,5 +86,19 @@ public class CompanyController {
 	public String getMessage(String exceptionCode) {
 		return messageSource.getMessage(exceptionCode, null, LocaleContextHolder.getLocale());
 	}
+	
+	//Task 3
+	@GetMapping(value = "/companies/{id}")
+	public Company getCompanyById(@PathVariable(value = "id")Long id)
+	{
+		return companyService.getCompanyById(id);
+	}
+	
+	//Task 4
+	@GetMapping(value = "/companies/companyCode/{code}")
+	public Company getCompanyById(@PathVariable(value = "code")String code)
+	{
+		return companyService.getCompanyByCode(code);
+	}
 
 }
