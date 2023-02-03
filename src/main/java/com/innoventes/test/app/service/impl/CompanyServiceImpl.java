@@ -53,4 +53,16 @@ public class CompanyServiceImpl implements CompanyService {
 						ApplicationErrorCodes.COMPANY_NOT_FOUND));
 		companyRepository.deleteById(existingCompanyRecord.getId());
 	}
+	//Task 3
+	@Override
+	public Company getCompanyById(Long id) {
+		return companyRepository.getById(id);
+	}
+	
+	
+	//Task 4
+	@Override
+	public Company getCompanyByCode(String code) {
+		return companyRepository.getByCompanyCode(code);
+	}
 }
